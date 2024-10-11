@@ -1,0 +1,60 @@
+<head>
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <fieldset style="width: 245px; margin: auto">
+        <legend> Calculator Application</legend>
+        <table style="width: 100%" border="0">
+            <tr>
+                <td>
+                    First 1:
+                </td>
+                <td>
+                    <input type="number" id="numberA" value="6">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Second 2:
+                </td>
+                <td>
+                    <input type="number" id="numberB" value="7">
+                </td>
+            </tr>
+            <td colspan="2">
+                <button id="btnAdd"> Add </button>
+                <button id="btnSubtract"> Subtract </button>
+                <button id="btnMultiply"> Multiply </button>
+                <button id="btnDivide"> Divide </button>
+            </td>
+            </tr>
+            <td>
+                Answer:
+            </td>
+            <td>
+                <input id="answer" type="text" readonly>
+            </td>
+            </tr>
+        </table>
+    </fieldset>
+</body>
+<script>
+
+
+    function onClick(event){
+        const operator = event.target.innerText.toLowerCase()
+        const a = Number(numberA.value);
+        const b = Number(numberB.value);
+        if("divide"== operator){
+        answer.value = calc(a, b, operator).toFixed(3);
+    }else{
+        answer.value = calc( a, b, operator)
+        }
+    }
+
+    btnAdd.addEventListener("click" , onClick);
+    btnSubtract.addEventListener("click" , onClick);
+    btnMultiply.addEventListener("click" , onClick);
+    btnDivide.addEventListener("click" , onClick);
+    </script>
